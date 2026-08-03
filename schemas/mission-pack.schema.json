@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nikkapro22-lab/heroes-mission-engine/schemas/mission-pack.schema.json",
+  "title": "HEROES Mission Pack",
+  "type": "object",
+  "required": ["id", "title", "purpose", "missions", "reflection", "accessibleAlternative", "safety"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "purpose": {"type": "string", "minLength": 20},
+    "missions": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["level", "action"],
+        "properties": {
+          "level": {"enum": ["initiation", "practice", "ascent"]},
+          "action": {"type": "string", "minLength": 10},
+          "evidence": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "reflection": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+    "accessibleAlternative": {"type": "string", "minLength": 20},
+    "safety": {"type": "string", "minLength": 20}
+  },
+  "additionalProperties": false
+}

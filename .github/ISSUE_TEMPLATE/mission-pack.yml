@@ -1,0 +1,36 @@
+name: New mission pack
+description: Propose or claim one ethical real-world mission pack
+title: "Mission pack: "
+labels: ["good first issue", "help wanted"]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: What real-world skill or value will the mission develop?
+    validations:
+      required: true
+  - type: input
+    id: path
+    attributes:
+      label: Proposed file
+      placeholder: packs/es/01-autoconocimiento.md
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Mission idea
+      description: Summarize the real action, progression, reflection, and accessible alternative.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contributor checks
+      options:
+        - label: I will contribute original work and review any AI assistance.
+          required: true
+        - label: I will not include personal data, private code, or professional medical, legal, or financial advice.
+          required: true
+
